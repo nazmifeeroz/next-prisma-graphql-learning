@@ -1,8 +1,19 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/tailwind.css";
+import Layout from "../components/Layout";
+import { FC } from "react";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+interface Props {
+  // any props that come into the component
+  Component: any;
+  pageProps: any;
 }
 
-export default MyApp
+const MyApp: FC<Props> = ({ Component, pageProps }) => {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
+};
+
+export default MyApp;
