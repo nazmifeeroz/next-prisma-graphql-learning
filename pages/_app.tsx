@@ -1,9 +1,8 @@
-import "../styles/tailwind.css";
-import Layout from "../components/Layout";
-import { FC } from "react";
+import { FC } from 'react';
+import '../styles/tailwind.css';
+import Layout from '../components/Layout';
 
 interface Props {
-  // any props that come into the component
   Component: any;
   pageProps: any;
 }
