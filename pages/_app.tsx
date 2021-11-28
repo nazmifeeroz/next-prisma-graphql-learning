@@ -1,17 +1,15 @@
-import { FC } from 'react';
 import '../styles/tailwind.css';
 import Layout from '../components/Layout';
+import { ApolloProvider } from '@apollo/client';
+import apolloClient from '../lib/apollo';
 
-interface Props {
-  Component: any;
-  pageProps: any;
-}
-
-const MyApp: FC<Props> = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ApolloProvider client={apolloClient}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ApolloProvider>
   );
 };
 
